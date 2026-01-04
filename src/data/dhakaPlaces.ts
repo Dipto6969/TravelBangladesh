@@ -12,7 +12,7 @@ export const dhakaPlaces: Place[] = [
     fullDescription: `Lalbagh Fort, also known as Fort Aurangabad, is an incomplete 17th-century Mughal fort complex that stands on the banks of the Buriganga River. Construction began in 1678 by Prince Muhammad Azam, son of Emperor Aurangzeb, and was later continued by Shaista Khan. The fort complex includes the Tomb of Pari Bibi (Fair Lady), the Audience Hall and Hammam, and the Lalbagh Mosque. The romantic legend of Pari Bibi, believed to be Shaista Khan's daughter, adds a mystical charm to this architectural marvel. The fort's incomplete status is often attributed to the death of Pari Bibi, after which Shaista Khan considered it inauspicious to continue. Today, it stands as one of Dhaka's most visited heritage sites, offering a glimpse into the city's Mughal past.`,
     heroImage: 'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=1920&q=80',
     gallery: [
-      'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=800&q=80',
+      'https://lh3.googleusercontent.com/p/AF1QipMf_WFf6gCWMTkturlo_vHDH-TTtPEN6YeNM5ZY=s1360-w1360-h1020-rw',
       'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80',
       'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80'
     ],
@@ -73,7 +73,7 @@ export const dhakaPlaces: Place[] = [
     fullDescription: `Shaheed Minar, or the Martyr Monument, is a national monument established to commemorate those killed during the Bengali Language Movement demonstrations of 1952. On February 21, 1952, several students and activists were killed by Pakistani police while demanding recognition of Bengali as one of the state languages. The original monument was demolished by the government, but it was rebuilt in 1963 with a more elaborate design. The structure represents a mother with her martyred sons, symbolizing the sacrifice made for the mother tongue. Every year on February 21 (now observed as International Mother Language Day by UNESCO), millions gather here to pay tribute, creating a sea of flowers and songs celebrating the Bengali language.`,
     heroImage: 'https://images.unsplash.com/photo-1590586767908-20d6d1b6db58?w=1920&q=80',
     gallery: [
-      'https://images.unsplash.com/photo-1590586767908-20d6d1b6db58?w=800&q=80'
+      'https://lh3.googleusercontent.com/proxy/WKbD51Q_cDP-ejqpSmklEZqym7QZ84zfxGOv05NVM7uJsANSiPhpdVD-PVPizsVId-59SyHgdGwv3RhdyehkkkisGdtiHdQwFnHk5ANOnNENj2No7hSDLgMLwS2vRFe4z2-G9f04yNvhYg'
     ],
     location: {
       address: 'Dhaka Medical College Campus',
@@ -100,9 +100,9 @@ export const dhakaPlaces: Place[] = [
     category: 'historic',
     shortDescription: 'A stunning British Raj-era building with European and Mughal architectural fusion.',
     fullDescription: `Curzon Hall is a British Raj-era building and former town hall located in the University of Dhaka campus. Named after Lord Curzon, the Viceroy of India who laid its foundation stone in 1904, it was originally intended to be a town hall but became part of Dhaka University in 1921. The building showcases a beautiful blend of European and Mughal architectural elements, featuring red brick construction, horseshoe arches, and intricate decorative motifs. The striking red building set against lush green lawns creates one of Dhaka's most photographed scenes. Curzon Hall has witnessed many historical events and remains an active part of the university, housing the Faculty of Science.`,
-    heroImage: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1920&q=80',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Curjon_Hall.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80'
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Curzon_Hall_DU.jpg/1200px-Curzon_Hall_DU.jpg'
     ],
     location: {
       address: 'University of Dhaka Campus',

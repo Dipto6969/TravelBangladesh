@@ -21,7 +21,8 @@ export function TiltCard({ children, className = '', options = {} }: TiltCardPro
   const tiltRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!tiltRef.current) return;
+    const node = tiltRef.current;
+    if (!node) return;
 
     const defaultOptions = {
       max: 15,
@@ -33,14 +34,12 @@ export function TiltCard({ children, className = '', options = {} }: TiltCardPro
       ...options
     };
 
-    VanillaTilt.init(tiltRef.current, defaultOptions);
+    VanillaTilt.init(node, defaultOptions);
 
     return () => {
-      if (tiltRef.current) {
-        const vanillaTilt = (tiltRef.current as HTMLDivElement & { vanillaTilt?: { destroy: () => void } }).vanillaTilt;
-        if (vanillaTilt) {
-          vanillaTilt.destroy();
-        }
+      const vanillaTilt = (node as HTMLDivElement & { vanillaTilt?: { destroy: () => void } }).vanillaTilt;
+      if (vanillaTilt) {
+        vanillaTilt.destroy();
       }
     };
   }, [options]);
@@ -75,10 +74,12 @@ export function Card3D({
   };
 
   useEffect(() => {
-    if (!tiltRef.current) return;
+    const node = tiltRef.current;
+    if (!node) return;
 
-    VanillaTilt.init(tiltRef.current, {
-      ...depthSettings[depth],
+    const settings = depthSettings[depth];
+    VanillaTilt.init(node, {
+      ...settings,
       speed: 400,
       glare: true,
       'max-glare': 0.2,
@@ -86,13 +87,12 @@ export function Card3D({
     });
 
     return () => {
-      if (tiltRef.current) {
-        const vanillaTilt = (tiltRef.current as HTMLDivElement & { vanillaTilt?: { destroy: () => void } }).vanillaTilt;
-        if (vanillaTilt) {
-          vanillaTilt.destroy();
-        }
+      const vanillaTilt = (node as HTMLDivElement & { vanillaTilt?: { destroy: () => void } }).vanillaTilt;
+      if (vanillaTilt) {
+        vanillaTilt.destroy();
       }
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [depth]);
 
   return (

@@ -108,14 +108,13 @@ export default function ContactPage() {
             </FadeInUp>
 
             <FadeInUp delay={0.1}>
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
+              <h1 className="text-4xl md:text-6xl font-display font-bold text-shadow-black mb-6">
                 Let&apos;s Start a{' '}
                 <span className="text-gradient">Conversation</span>
               </h1>
             </FadeInUp>
-
             <FadeInUp delay={0.2}>
-              <p className="text-xl text-white/70">
+              <p className="text-xl text-shadow-black/70">
                 Have questions, suggestions, or just want to say hello? 
                 We&apos;d love to hear from you.
               </p>
@@ -372,13 +371,13 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 md:px-6 relative">
           <div className="max-w-2xl mx-auto text-center">
             <ScaleIn>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-shadow-black mb-4">
                 Stay in the Loop
               </h2>
             </ScaleIn>
 
             <FadeInUp delay={0.1}>
-              <p className="text-white/60 mb-8">
+              <p className="text-shadow-black/60 mb-8">
                 Subscribe to our newsletter for travel tips, new destinations, 
                 and exclusive content delivered to your inbox.
               </p>

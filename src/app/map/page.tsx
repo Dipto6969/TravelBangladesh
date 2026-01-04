@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { MapPin, List, Filter, Search, Play, Calendar } from 'lucide-react';
-import { dhakaPlaces } from '@/data/dhaka-places';
+import { MapPin, List, Search, Play, Calendar } from 'lucide-react';
+import { dhakaPlaces } from '@/data';
 import { InteractiveMap } from '@/components/InteractiveMap';
 import { VirtualTour } from '@/components/VirtualTour';
 import { TripPlanner } from '@/components/TripPlanner';
@@ -23,7 +23,7 @@ export default function MapPage() {
   const [showList, setShowList] = useState(false);
 
   // Filter places
-  const filteredPlaces = dhakaPlaces.filter(place => {
+  const filteredPlaces: Place[] = dhakaPlaces.filter((place: Place) => {
     const matchesCategory = selectedCategory === 'all' || place.category === selectedCategory;
     const matchesSearch = place.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           place.nameBangla.includes(searchQuery) ||

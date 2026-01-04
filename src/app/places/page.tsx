@@ -41,7 +41,7 @@ export default function PlacesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-40 pb-20 overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/10 via-transparent to-transparent" />
         <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-emerald-500/10 blur-3xl" />
@@ -53,11 +53,11 @@ export default function PlacesPage() {
               <span className="inline-block px-4 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-sm font-medium mb-6">
                 Explore Dhaka
               </span>
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-6">
+              <h1 className="text-4xl md:text-6xl font-display font-bold text-shadow-black mb-6">
                 Discover Amazing{' '}
                 <span className="text-gradient">Places</span>
               </h1>
-              <p className="text-lg text-white/60 mb-8">
+              <p className="text-lg text-shadow-black/60 mb-8">
                 From historic monuments to modern marvels, explore the best destinations 
                 that Dhaka has to offer.
               </p>

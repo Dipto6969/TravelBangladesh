@@ -3,7 +3,6 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence, Reorder } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 import { 
   GripVertical, 
   X, 
@@ -16,7 +15,6 @@ import {
   Calendar
 } from 'lucide-react';
 import { Place } from '@/data/types';
-import { cn } from '@/lib/utils';
 
 interface TripPlannerProps {
   allPlaces: Place[];

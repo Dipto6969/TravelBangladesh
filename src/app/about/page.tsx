@@ -124,10 +124,10 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="container mx-auto px-4 md:px-6">
           <FadeInUp className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-shadow-black mb-4">
               Our Purpose
             </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
+            <p className="text-shadow-black/60 max-w-2xl mx-auto">
               We&apos;re more than just a travel guide — we&apos;re storytellers, 
               culture enthusiasts, and passionate advocates for Bangladesh.
             </p>
@@ -226,10 +226,10 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="container mx-auto px-4 md:px-6">
           <FadeInUp className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-shadow-black mb-4">
               What We Believe In
             </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
+            <p className="text-shadow-black/60 max-w-2xl mx-auto">
               Our values guide everything we do, from the places we feature 
               to the stories we tell.
             </p>
@@ -263,13 +263,13 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6 relative">
           <div className="max-w-3xl mx-auto text-center">
             <ScaleIn>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-shadow-black mb-6">
                 Join Us on This Journey
               </h2>
             </ScaleIn>
 
             <FadeInUp delay={0.1}>
-              <p className="text-xl text-white/70 mb-10">
+              <p className="text-xl text-shadow-black/70 mb-10">
                 Whether you&apos;re planning your first trip or you&apos;re a seasoned 
                 explorer, there&apos;s always something new to discover.
               </p>

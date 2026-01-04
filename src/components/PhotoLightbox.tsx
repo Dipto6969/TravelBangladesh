@@ -33,21 +33,28 @@ export function PhotoLightbox({
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [wasOpen, setWasOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const currentImage = images[currentIndex];
 
-  // Reset state when opening with new initial index
-  const prevIsOpen = useRef(isOpen);
+  // Reset state when lightbox opens - valid pattern for controlled component
   useEffect(() => {
-    if (isOpen && !prevIsOpen.current) {
-      // Just opened
+    if (isOpen && !wasOpen) {
+      // Lightbox just opened - need to sync state with props
       setCurrentIndex(initialIndex);
       setZoom(1);
       setPosition({ x: 0, y: 0 });
     }
-    prevIsOpen.current = isOpen;
-  }, [isOpen, initialIndex]);
+    setWasOpen(isOpen);
+  }, [isOpen, wasOpen, initialIndex]);
+  
+  // Update index when initialIndex changes while open
+  useEffect(() => {
+    if (isOpen) {
+      setCurrentIndex(initialIndex);
+    }
+  }, [initialIndex, isOpen]);
 
   // Keyboard controls
   useEffect(() => {
@@ -177,7 +184,7 @@ export function PhotoLightbox({
             >
               <ZoomOut className="w-5 h-5 text-white" />
             </button>
-            <span className="text-white/60 text-sm min-w-[4rem] text-center">
+            <span className="text-white/60 text-sm min-w-16 text-center">
               {Math.round(zoom * 100)}%
             </span>
             <button

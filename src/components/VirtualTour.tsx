@@ -68,7 +68,7 @@ export function VirtualTour({ places, isOpen, onClose, startIndex = 0 }: Virtual
   // Start/stop tour
   useEffect(() => {
     if (isPlaying && currentPlace) {
-      const text = `${currentPlace.name}. ${currentPlace.nameBangla}. ${currentPlace.description}`;
+      const text = `${currentPlace.name}. ${currentPlace.nameBangla}. ${currentPlace.shortDescription}`;
       speak(text);
       
       // Progress animation
@@ -243,7 +243,7 @@ export function VirtualTour({ places, isOpen, onClose, startIndex = 0 }: Virtual
                     {currentPlace.nameBangla}
                   </p>
                   <p className="text-lg text-white/80 leading-relaxed">
-                    {currentPlace.description}
+                    {currentPlace.shortDescription}
                   </p>
                 </motion.div>
               </AnimatePresence>

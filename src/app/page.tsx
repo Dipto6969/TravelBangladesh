@@ -48,14 +48,13 @@ export default function HomePage() {
               </FadeInUp>
 
               <FadeInUp delay={0.1}>
-                <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
+                <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-shadow-black">
                   Discover the{' '}
                   <span className="text-gradient">Heart of Bengal</span>
                 </h2>
               </FadeInUp>
-
               <FadeInUp delay={0.2}>
-                <p className="text-lg text-white/70 mb-8 leading-relaxed">
+                <p className="text-lg text-shadow-black/70 mb-8 leading-relaxed">
                   {siteConfig.description} From ancient Mughal forts to modern architectural marvels, 
                   from bustling street food markets to serene lakefront promenades — Bangladesh awaits 
                   with open arms and countless stories to tell.
@@ -200,12 +199,12 @@ export default function HomePage() {
               </span>
             </FadeInUp>
             <FadeInUp delay={0.1}>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-shadow-black mb-4">
                 Must-Visit Places in Dhaka
               </h2>
             </FadeInUp>
             <FadeInUp delay={0.2}>
-              <p className="text-lg text-white/60 max-w-2xl mx-auto">
+              <p className="text-lg text-shadow-black/60 max-w-2xl mx-auto">
                 Handpicked destinations that capture the essence of Dhaka&apos;s rich 
                 heritage, vibrant culture, and modern charm.
               </p>
@@ -246,17 +245,17 @@ export default function HomePage() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <FadeInUp>
-              <span className="inline-block px-4 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-sm font-medium mb-6">
+              <span className="inline-block px-4 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-sm font-medium mb-6">
                 Explore By Interest
               </span>
             </FadeInUp>
             <FadeInUp delay={0.1}>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-shadow-black mb-4">
                 What Moves You?
               </h2>
             </FadeInUp>
             <FadeInUp delay={0.2}>
-              <p className="text-lg text-white/60 max-w-2xl mx-auto">
+              <p className="text-lg text-shadow-black/60 max-w-2xl mx-auto">
                 Whether you&apos;re a history buff, foodie, nature lover, or culture 
                 enthusiast — there&apos;s something magical waiting for you.
               </p>
@@ -283,7 +282,7 @@ export default function HomePage() {
               </span>
             </FadeInUp>
             <FadeInUp delay={0.1}>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-shadow-black mb-4">
                 What Travelers Say
               </h2>
             </FadeInUp>

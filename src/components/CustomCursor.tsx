@@ -192,7 +192,7 @@ export function CustomCursor() {
         <motion.div
           animate={{
             scale: isHovering ? 1.3 : isClicking ? 0.8 : 1,
-            rotate: isHovering ? 15 : isClicking ? -15 : 0,
+            rotate: isHovering ? -30 : isClicking ? -60 : -45,
             opacity: isVisible ? 1 : 0,
           }}
           transition={{ duration: 0.2, type: "spring", stiffness: 300 }}

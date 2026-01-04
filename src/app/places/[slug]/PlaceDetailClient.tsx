@@ -25,6 +25,7 @@ import {
   SlideInRight 
 } from '@/components';
 import { Place, getPlacesByCategory, getCategoryById } from '@/data';
+import { useWikimediaImages } from '@/hooks/useWikimediaImages';
 
 interface PlaceDetailClientProps {
   place: Place;
@@ -35,6 +36,13 @@ export default function PlaceDetailClient({ place }: PlaceDetailClientProps) {
   const relatedPlaces = getPlacesByCategory(place.category)
     .filter(p => p.id !== place.id)
     .slice(0, 3);
+  
+  // Dynamically fetch Wikimedia images
+  const { heroImage, gallery, loading } = useWikimediaImages(
+    place.slug, 
+    place.heroImage, 
+    place.gallery
+  );
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -62,9 +70,19 @@ export default function PlaceDetailClient({ place }: PlaceDetailClientProps) {
     <>
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] overflow-hidden">
+        {/* Loading Overlay */}
+        {loading && (
+          <div className="absolute inset-0 bg-midnight z-20 flex items-center justify-center">
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-12 h-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin" />
+              <p className="text-white/60">Loading images...</p>
+            </div>
+          </div>
+        )}
+        
         {/* Background Image */}
         <Image
-          src={place.heroImage}
+          src={heroImage}
           alt={place.name}
           fill
           priority
@@ -181,7 +199,7 @@ export default function PlaceDetailClient({ place }: PlaceDetailClientProps) {
                   <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                     📸 Gallery
                   </h2>
-                  <GallerySlider images={place.gallery} title={place.name} />
+                  <GallerySlider images={gallery.length > 0 ? gallery : place.gallery} title={place.name} />
                 </div>
               </SlideInLeft>
 

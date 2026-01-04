@@ -8,6 +8,7 @@ import { Place } from '@/data/types';
 import { cn } from '@/lib/utils';
 import { TiltCard } from './TiltCard';
 import { FavoriteButton } from './FavoriteButton';
+import { useWikimediaImages } from '@/hooks/useWikimediaImages';
 
 interface PlaceCardProps {
   place: Place;
@@ -18,6 +19,12 @@ interface PlaceCardProps {
 export default function PlaceCard({ place, index = 0, variant = 'default' }: PlaceCardProps) {
   const isFeatured = variant === 'featured';
   const isCompact = variant === 'compact';
+  
+  // Dynamically fetch Wikimedia images
+  const { heroImage, loading } = useWikimediaImages(place.slug, place.heroImage);
+  
+  // Ensure we always have a valid image URL
+  const displayImage = heroImage && heroImage.trim() !== '' ? heroImage : place.heroImage;
 
   return (
     <motion.div
@@ -50,8 +57,13 @@ export default function PlaceCard({ place, index = 0, variant = 'default' }: Pla
           >
           {/* Background Image */}
           <div className="absolute inset-0 img-zoom">
+            {loading && (
+              <div className="absolute inset-0 bg-midnight/80 flex items-center justify-center z-10">
+                <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
+              </div>
+            )}
             <Image
-              src={place.heroImage}
+              src={displayImage}
               alt={place.name}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -78,7 +90,7 @@ export default function PlaceCard({ place, index = 0, variant = 'default' }: Pla
             <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
               <FavoriteButton slug={place.slug} size="sm" />
               <div className="flex items-center gap-1 glass px-2 py-1 rounded-full">
-                <Star className="w-3 h-3 text-gold-400 fill-current" />
+                <Star className="w-3 h-3 text-emerald-400 fill-current" />
                 <span className="text-white text-xs font-medium">{place.rating}</span>
               </div>
             </div>

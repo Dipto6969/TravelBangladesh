@@ -4,8 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Heart, MapPin, Star, Trash2, Play, Calendar, Map } from 'lucide-react';
-import { dhakaPlaces } from '@/data/dhaka-places';
+import { dhakaPlaces } from '@/data';
 import { useFavorites } from '@/components/FavoritesContext';
+import { Place } from '@/data/types';
 import { FavoriteButton } from '@/components/FavoriteButton';
 import { VirtualTour } from '@/components/VirtualTour';
 import { TripPlanner } from '@/components/TripPlanner';
@@ -17,7 +18,7 @@ export default function FavoritesPage() {
   const [showTripPlanner, setShowTripPlanner] = useState(false);
 
   // Get full place data for favorites
-  const favoritePlaces = dhakaPlaces.filter(place => favorites.includes(place.slug));
+  const favoritePlaces: Place[] = dhakaPlaces.filter((place: Place) => favorites.includes(place.slug));
 
   return (
     <main className="min-h-screen bg-[#0B1220] pt-24">

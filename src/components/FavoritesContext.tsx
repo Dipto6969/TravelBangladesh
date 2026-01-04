@@ -1,7 +1,7 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { Place } from '@/data/types';
+import { createContext, useContext, useState, useEffect, useCallback, useSyncExternalStore } from 'react';
+
 
 interface FavoritesContextType {
   favorites: string[]; // Array of place slugs
@@ -16,13 +16,20 @@ const FavoritesContext = createContext<FavoritesContextType | undefined>(undefin
 
 const STORAGE_KEY = 'travel-bangladesh-favorites';
 
+// Helper to check if we're on client
+const getIsMounted = () => true;
+const getServerSnapshot = () => false;
+const subscribe = () => () => {};
+
 export function FavoritesProvider({ children }: { children: React.ReactNode }) {
   const [favorites, setFavorites] = useState<string[]>([]);
-  const [mounted, setMounted] = useState(false);
+  
+  // Use useSyncExternalStore for hydration-safe mounting detection
+  const mounted = useSyncExternalStore(subscribe, getIsMounted, getServerSnapshot);
 
-  // Load favorites from localStorage on mount
+  // Load favorites from localStorage on mount - syncing with external storage
   useEffect(() => {
-    setMounted(true);
+    if (!mounted) return;
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       try {
@@ -31,7 +38,7 @@ export function FavoritesProvider({ children }: { children: React.ReactNode }) {
         setFavorites([]);
       }
     }
-  }, []);
+  }, [mounted]);
 
   // Save to localStorage whenever favorites change
   useEffect(() => {
